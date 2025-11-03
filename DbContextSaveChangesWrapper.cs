@@ -203,7 +203,7 @@ public partial class DbContextSaveChangesWrapper {
         {
           if (basicErrorMessage.ToLower().Contains($"'{keyValue.Value.ToLower()}'"))
           {
-            var clearerErrorMessage = $"Error code {localTimestamp}{ErrorCodeSeparator}{keyValue.Key}. {innerException.Message}";
+            var clearerErrorMessage = $"Error code {localTimestamp}. Field code {keyValue.Key}. {innerException.Message}";
             clearerErrorMessage = clearerErrorMessage.Replace("vvv", ErrorCodeSeparator);
             return clearerErrorMessage;
           }
